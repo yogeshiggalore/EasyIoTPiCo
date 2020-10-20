@@ -25,7 +25,7 @@ void setup(){
 	pinMode(LED1_PIN, OUTPUT);
 
 	/* set switch pin as input */
-	pinMode(SWITCH_PIN, INPUT);
+	pinMode(SWITCH_PIN, INPUT_PULLUP);
 }
 
 void loop() {

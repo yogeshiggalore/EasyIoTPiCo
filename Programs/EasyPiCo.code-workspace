@@ -4,8 +4,36 @@
 			"path": "EasyIoTPiCoV1Test"
 		},
 		{
-			"name": "EasyIoTPiCo_Switch_1",
-			"path": "EasyIoTPiCo_Switch_1"
+			"name": "EasyIoTPiCo_LED_01",
+			"path": "EasyIoTPiCo_LED_01"
+		},
+		{
+			"name": "EasyIoTPiCo_LED_02",
+			"path": "EasyIoTPiCo_LED_02"
+		},
+		{
+			"name": "EasyIoTPiCo_Switch_02",
+			"path": "EasyIoTPiCo_Switch_02"
+		},
+		{
+			"name": "EasyIoTPiCo_Switch_01",
+			"path": "EasyIoTPiCo_Switch_01"
+		},
+		{
+			"name": "EasyIoTPiCo_Timer_01",
+			"path": "EasyIoTPiCo_Timer_01"
+		},
+		{
+			"name": "EasyIoTPiCo_Timer_02",
+			"path": "EasyIoTPiCo_Timer_02"
+		},
+		{
+			"name": "EasyIoTPiCo_PWM_01",
+			"path": "EasyIoTPiCo_PWM_01"
+		},
+		{
+			"name": "EasyIoTPiCo_UART_01",
+			"path": "EasyIoTPiCo_UART_01"
 		}
 	],
 	"settings": {}
