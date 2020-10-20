@@ -1,0 +1,23 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: EASYIOTPICO.PcbDoc   8/11/2020  3:34:43 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : EASYIOTPICO-RoundHoles.TXT
+ASCII SlotHoles File : EASYIOTPICO-SlotHoles.TXT
+EIA File   : EASYIOTPICO.DRL
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      15mil (0.381mm)                                           Round             61        PTH        0.00inch (0.00mm)
+T2      22mil (0.55mm)                                            Slot              2         PTH        0.00inch (0.00mm)
+T3      25mil (0.63mm)                                            Round             2         PTH        0.00inch (0.00mm)
+T4      32mil (0.8mm)                                             Round             3         PTH        0.00inch (0.00mm)
+T5      33mil (0.85mm)                                            Slot              2         PTH        0.00inch (0.00mm)
+T6      35mil (0.9mm)                                             Round             17        PTH        0.00inch (0.00mm)
+T7      39mil (1mm)                                               Round             2         PTH        0.00inch (0.00mm)
+T8      32mil (0.8mm)                                             Round             2         NPTH       0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              91
+
+Total Processing Time (hh:mm:ss) : 00:00:00

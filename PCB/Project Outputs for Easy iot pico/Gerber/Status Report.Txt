@@ -1,0 +1,22 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Easy iot pico.PrjPcb]
+   Generated File[EASYIOTPICO.GTO]
+   Generated File[EASYIOTPICO.GTP]
+   Generated File[EASYIOTPICO.GTS]
+   Generated File[EASYIOTPICO.GTL]
+   Generated File[EASYIOTPICO.GBL]
+   Generated File[EASYIOTPICO.GBS]
+   Generated File[EASYIOTPICO.GBP]
+   Generated File[EASYIOTPICO.GBO]
+   Generated File[EASYIOTPICO.GD1]
+   Generated File[EASYIOTPICO.GG1]
+   Generated File[EASYIOTPICO.RUL]
+   Generated File[EASYIOTPICO.EXTREP]
+   Generated File[EASYIOTPICO.REP]
+
+
+Files Generated   : 13
+Documents Printed : 0
+
+Finished Output Generation At 3:34:14 PM On 8/11/2020

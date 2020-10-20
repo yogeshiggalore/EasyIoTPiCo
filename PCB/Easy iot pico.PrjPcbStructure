@@ -1,0 +1,5 @@
+Record=TopLevelDocument|FileName=main.SchDoc
+Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=CONTROLLER|SchDesignator=CONTROLLER|FileName=controller.SchDoc|SymbolType=Normal|RawFileName=controller.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=PERIHERALS|SchDesignator=PERIHERALS|FileName=INPUT AND OUPUT.SchDoc|SymbolType=Normal|RawFileName=INPUT AND OUPUT.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=POWER SUPPLY|SchDesignator=POWER SUPPLY|FileName=PowerSupply.SchDoc|SymbolType=Normal|RawFileName=PowerSupply.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=PROGAMMER|SchDesignator=PROGAMMER|FileName=Programmer.SchDoc|SymbolType=Normal|RawFileName=Programmer.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
