@@ -34,7 +34,45 @@
 		{
 			"name": "EasyIoTPiCo_UART_01",
 			"path": "EasyIoTPiCo_UART_01"
+		},
+		{
+			"name": "EasyIoTPiCo_PWM_02",
+			"path": "EasyIoTPiCo_PWM_02"
+		},
+		{
+			"name": "EasyIoTPiCo_Memory_01",
+			"path": "EasyIoTPiCo_Memory_01"
+		},
+		{
+			"name": "LED_Example",
+			"path": "B3\\LED_Example"
+		},
+		{
+			"name": "EasyIoTPiCo_ADC_01",
+			"path": "EasyIoTPiCo_ADC_01"
+		},
+		{
+			"name": "EasyIoTPiCo_DHT11_01",
+			"path": "EasyIoTPiCo_DHT11_01"
+		},
+		{
+			"name": "EasyIoTPiCo_LED_03",
+			"path": "EasyIoTPiCo_LED_03"
+		},
+		{
+			"name": "EasyIoTPiCo_LED_04",
+			"path": "EasyIoTPiCo_LED_04"
+		},
+		{
+			"name": "EasyIoTPiCo_Switch_03",
+			"path": "EasyIoTPiCo_Switch_03"
+		},
+		{
+			"name": "MQTTDemo",
+			"path": "..\\..\\RandomLearning\\RandomLearning\\MQTTDemo"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.autoSaveDelay": 10000
+	}
 }

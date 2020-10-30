@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Project Name: EasyIoTPiCo_LED_01
+* Project Name: EasyIoTPiCo_LED_02
 *
 * Version: 1.0
 *
