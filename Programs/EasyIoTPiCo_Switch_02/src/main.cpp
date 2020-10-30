@@ -18,6 +18,8 @@
 #define SWITCH_PIN	12
 #define LED1_PIN	2
 
+#define LED2_PIN	14
+
 uint8_t ui8LEDState=1;
 
 /* switch isr function */
@@ -29,6 +31,7 @@ void setup() {
 
 	/* set LED1 pin output */
 	pinMode(LED1_PIN, OUTPUT);
+	pinMode(LED2_PIN, OUTPUT);
 
 	/* set switch pin as input */
 	pinMode(SWITCH_PIN, INPUT);
@@ -50,6 +53,9 @@ void ICACHE_RAM_ATTR switch_isr(void){
 }
 
 void loop() {
-	/* empty loop */
+	digitalWrite(LED2_PIN,HIGH);
+	delay(500);
+	digitalWrite(LED2_PIN,LOW);
+	delay(500);
 }
 

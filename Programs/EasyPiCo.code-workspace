@@ -44,10 +44,6 @@
 			"path": "EasyIoTPiCo_Memory_01"
 		},
 		{
-			"name": "LED_Example",
-			"path": "B3\\LED_Example"
-		},
-		{
 			"name": "EasyIoTPiCo_ADC_01",
 			"path": "EasyIoTPiCo_ADC_01"
 		},
@@ -66,10 +62,6 @@
 		{
 			"name": "EasyIoTPiCo_Switch_03",
 			"path": "EasyIoTPiCo_Switch_03"
-		},
-		{
-			"name": "MQTTDemo",
-			"path": "..\\..\\RandomLearning\\RandomLearning\\MQTTDemo"
 		}
 	],
 	"settings": {

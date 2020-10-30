@@ -19,8 +19,9 @@
 #define LED1_PIN		2
 #define SWITCH_PIN		D6
 
-#define LOW		1
-#define HIGH	0
+
+#define LED_OFF		1
+#define LED_ON		0
 
 uint8_t ui8SwitchPressed=false;
 uint8_t ui8LEDState=0;
@@ -31,7 +32,7 @@ void setup(){
 	pinMode(LED1_PIN, OUTPUT);
 
 	/* turn off the led */
-	digitalWrite(LED1_PIN, LOW);
+	digitalWrite(LED1_PIN, LED_OFF);
 	ui8LEDState = false;
 
 	/* set switch pin as input */
@@ -44,18 +45,16 @@ void loop() {
 	while( digitalRead(SWITCH_PIN) == false){
 		/* small delay */
 		delay(1);
-	`
-	00
 		ui8SwitchPressed = true;
 	}
 	
 	if(ui8SwitchPressed){
 		ui8SwitchPressed = false;
 		if(ui8LEDState == false){
-			digitalWrite(LED1_PIN, HIGH);
+			digitalWrite(LED1_PIN, LED_ON);
 			ui8LEDState = true;
 		}else{
-			digitalWrite(LED1_PIN, LOW);
+			digitalWrite(LED1_PIN, LED_OFF);
 			ui8LEDState = false;
 		}
 	}
