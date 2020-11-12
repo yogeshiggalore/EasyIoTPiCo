@@ -12,13 +12,41 @@
 ********************************************************************************
 * Copyright (2020-21) , EasyIoTPiCo
 *******************************************************************************/
+/* theory
+
+clock, period value, comparator  
+
+1Hz or 1Khz 
+ 1khz -> 1ms with 1ms timeer module will count inc or dec 
+
+period value 10 
+inc counter at every rising edge counter = counter + 1 
+
+period value with current counter current counter > period value it say that timeout
+
+0 , 1, 2,3,4,5 ,6,7,8,9,10 timeout flag read do operation 
+
+Timer frequency 80Mhz 
+
+it means it take 1/f ie 1/80M = 0.0000000125 seconds to give u 1 tick 
+
+if u want to have 1 ms ie 0.001 then 0.001/0.0000000125 =  80000 (period value )
+
+period  =  required time / (1/timer frequency)
+
+ESP8266 : timer0 and timer1 
+
+timer0 is used for wifi 
+timer1 
+
+*/
 
 /* include header files */
 #include <Arduino.h>
 
 #define LED_PIN_1 2
 
-#define LED_1_BLINK_TIME	500
+#define LED_1_BLINK_TIME	100 // milisecond
 
 #define LED_OFF	0
 #define LED_ON	1

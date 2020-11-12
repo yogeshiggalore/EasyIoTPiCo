@@ -24,7 +24,7 @@ void loop() {
 	// increase the LED brightness
 	for(int dutyCycle = 0; dutyCycle < 1023; dutyCycle++){   
     	// changing the LED brightness with PWM
-    	analogWrite(LED1_PIN, dutyCycle);
+    	analogWrite(LED1_PIN, dutyCycle);a
     	delay(1);
  	}
 
@@ -35,3 +35,5 @@ void loop() {
     	delay(1);
   	}
 }
+
+
