@@ -47,6 +47,10 @@ void setup() {
 	attachInterrupt(digitalPinToInterrupt(SWITCH_PIN), switch_isr, FALLING);
 }
 
+void loop() {
+	/* empty loop */
+}
+
 void ICACHE_RAM_ATTR switch_isr(void){
 
 	/* read current status of led pin and write invert of it */
@@ -63,7 +67,5 @@ void ICACHE_RAM_ATTR switch_isr(void){
 	}
 }
 
-void loop() {
-	/* empty loop */
-}
+
 
