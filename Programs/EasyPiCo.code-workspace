@@ -62,6 +62,22 @@
 		{
 			"name": "EasyIoTPiCo_Switch_03",
 			"path": "EasyIoTPiCo_Switch_03"
+		},
+		{
+			"name": "EasyIoTPico_FileSystem_01",
+			"path": "EasyIoTPico_FileSystem_01"
+		},
+		{
+			"name": "EasyIoTPiCo_WebServer_01",
+			"path": "EasyIoTPiCo_WebServer_01"
+		},
+		{
+			"name": "EasyIoTPiCo_WebServer_02",
+			"path": "EasyIoTPiCo_WebServer_02"
+		},
+		{
+			"name": "EasyIoTPico_Webserver_03",
+			"path": "EasyIoTPico_Webserver_03"
 		}
 	],
 	"settings": {

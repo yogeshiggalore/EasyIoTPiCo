@@ -17,7 +17,7 @@
 
 #define LED_PIN 2
 
-String sCMDString = "Use following commands to control LED \nA: Turn on led\nB: Turn off led\nC: Get Acurrent led status";
+String sCMDString = "Use following commands to control LED \nA: Turn on led\nB: Turn off led\nC: Get current led status";
 
 void setup(){
 
@@ -28,7 +28,13 @@ void setup(){
 	digitalWrite(LED_PIN, HIGH);
 
 	/* Start UART module with baudrate 921600 */
-	Serial.begin(921600);
+	/*
+		baudrate : 921600
+		databit  : 8
+		parity   : None
+		stopbit  : 1
+	*/
+	Serial.begin(921600,SERIAL_8N1);
 
 	/* print project name */
 	Serial.println("\nEasyIoTPiCo_UART_01");

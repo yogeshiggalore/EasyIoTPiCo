@@ -53,16 +53,15 @@ void loop() {
 
 		/* display read error in serial */
 		fHeatIndex = 0;
-		Serial1.println("DHT11 reading failure");
+		Serial.println("DHT11 reading failure");
 	}else{
 
 		/* if data is valid read heat index */
 		fHeatIndex = dht.computeHeatIndex(fHumidity, fTemperature, false);
 		
 		/* display these values */
-		Serial1.printf("Temperature:%f degC Humidity:%f Heat index:%f\n",fTemperature,fHumidity,fHeatIndex);
+		Serial.printf("Temperature:%f degC Humidity:%f Heat index:%f\n",fTemperature,fHumidity,fHeatIndex);
 	}
 
 	delay(1000);
-	Serial.println("Here");
 }
