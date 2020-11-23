@@ -78,9 +78,17 @@
 		{
 			"name": "EasyIoTPico_Webserver_03",
 			"path": "EasyIoTPico_Webserver_03"
+		},
+		{
+			"name": "EasyIoTPiCo_I2C_01",
+			"path": "EasyIoTPiCo_I2C_01"
 		}
 	],
 	"settings": {
-		"files.autoSaveDelay": 10000
+		"files.autoSaveDelay": 10000,
+		"files.associations": {
+			"*.ini": "cpp",
+			"cmath": "cpp"
+		}
 	}
 }
