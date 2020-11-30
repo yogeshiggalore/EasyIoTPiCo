@@ -82,6 +82,10 @@
 		{
 			"name": "EasyIoTPiCo_I2C_01",
 			"path": "EasyIoTPiCo_I2C_01"
+		},
+		{
+			"name": "EasyIoTPiCo_Mqtt_01",
+			"path": "EasyIoTPiCo_Mqtt_01"
 		}
 	],
 	"settings": {
