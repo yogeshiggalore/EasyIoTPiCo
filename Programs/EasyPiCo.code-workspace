@@ -86,6 +86,34 @@
 		{
 			"name": "EasyIoTPiCo_Mqtt_01",
 			"path": "EasyIoTPiCo_Mqtt_01"
+		},
+		{
+			"name": "EasyIoTPiCo_Alexa_01",
+			"path": "EasyIoTPiCo_Alexa_01"
+		},
+		{
+			"name": "EasyIoTPiCo_Telegram_01",
+			"path": "EasyIoTPiCo_Telegram_01"
+		},
+		{
+			"name": "EasyIoTPiCo_Modbus_01",
+			"path": "EasyIoTPiCo_Modbus_01"
+		},
+		{
+			"name": "EasyIoTPiCo_Modbus_02",
+			"path": "EasyIoTPiCo_Modbus_02"
+		},
+		{
+			"name": "EasyIoTPiCo_Modbus_03",
+			"path": "EasyIoTPiCo_Modbus_03"
+		},
+		{
+			"name": "EasyIoTPiCo_Modbus_05",
+			"path": "EasyIoTPiCo_Modbus_05"
+		},
+		{
+			"name": "EasyIoTPiCo_Modbus_06",
+			"path": "EasyIoTPiCo_Modbus_06"
 		}
 	],
 	"settings": {
