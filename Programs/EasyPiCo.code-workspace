@@ -114,6 +114,10 @@
 		{
 			"name": "EasyIoTPiCo_Modbus_06",
 			"path": "EasyIoTPiCo_Modbus_06"
+		},
+		{
+			"name": "mbebmbed",
+			"path": "mbebmbed"
 		}
 	],
 	"settings": {

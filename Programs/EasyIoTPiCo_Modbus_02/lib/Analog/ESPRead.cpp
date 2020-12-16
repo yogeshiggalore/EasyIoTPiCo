@@ -58,10 +58,10 @@ uint8_t ESPRead::Read_DHT11(void){
 	/* check if data is valid */
 	if(isnan(fHumidity) || isnan(fTemperature)){
 
-		/* display read error in serial */
+		/* display read error in Serial1 */
 		fHeatIndex = 0;
 		ui8Response = 0;
-		Serial.println("DHT22 reading failure");
+		Serial1.println("DHT22 reading failure");
         ui8DHTValidFlag = 0;
 	}else{
 
@@ -72,7 +72,7 @@ uint8_t ESPRead::Read_DHT11(void){
         ui8DHTValidFlag = 1;
 
 		/* display these values */
-		Serial.printf("Temperature:%f degC Humidity:%f Heat index:%f\n",fTemperature,fHumidity,fHeatIndex);
+		Serial1.printf("Temperature:%f degC Humidity:%f Heat index:%f\n",fTemperature,fHumidity,fHeatIndex);
 	}
 	
 	return ui8Response;
@@ -96,8 +96,8 @@ void ESPRead::Read_ADC_Values(void){
 	/* every 10milivolt change will result in 1 degree changes */
 	fLMTemperature = fLMTemperature / 10.0;
 
-	/* display values to serial */
-	Serial.printf("Pot:%f Temperature:%f\n",fPotVolt,fLMTemperature);
+	/* display values to Serial1 */
+	Serial1.printf("Pot:%f Temperature:%f\n",fPotVolt,fLMTemperature);
 }
 
 

@@ -36,14 +36,14 @@
 #define WIFI_PASSWORD "IOTDev1234"
 
 /* mqtt server/host */
-#define MQTT_HOST "silicosmos.in"
+#define MQTT_HOST "yourserver.in"
 
 /* mqtt port secure communication use 8883 */
 #define MQTT_PORT 1883
 
 /* mqtt credentails for connection username and password */
-#define MQTT_USERNAME "yogesh"
-#define MQTT_PASSWORD "yogesh"
+#define MQTT_USERNAME "username"
+#define MQTT_PASSWORD "password"
 
 /* keep alive in second decides how long server should keep client connection */
 #define MQTT_KEEPALIVE 90

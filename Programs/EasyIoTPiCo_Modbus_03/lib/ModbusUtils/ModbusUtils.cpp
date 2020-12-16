@@ -494,12 +494,19 @@ uint8_t ModbusUtils::Modbus_ExpectedBytes_ASCII(uint8_t aui8Buffer[]){
     uint16_t ui16NumberOfRegister=0;
     uint8_t  ui8FunctionCode=0;
     
+    ui8FunctionCode = aui8Buffer[3] - 0x30;
+    ui8FunctionCode <= 4;
+    ui8FunctionCode = ui8FunctionCode | (aui8Buffer[4] - 0x30);
+
+    Serial1.print("Func code: ");
+    Serial1.println(ui8FunctionCode);
+
+    ui16NumberOfRegister = aui8Buffer[9];
     ui16NumberOfRegister = aui8Buffer[4];
     ui16NumberOfRegister = ui16NumberOfRegister << 8;
     ui16NumberOfRegister = ui16NumberOfRegister | aui8Buffer[5];
     
     ui8FunctionCode = aui8Buffer[1];
-    
     
     if((ui8FunctionCode == MODBUS_FUNC_READ_COIL_REG) || (ui8FunctionCode == MODBUS_FUNC_READ_INPUT_STATUS_REG)){
         ui8Response = ui16NumberOfRegister/8;
@@ -528,6 +535,77 @@ uint8_t ModbusUtils::Modbus_Get_Error_Code(uint8_t ui8Byte){
     }else{
         return MODBUS_ASCII_ERR_UNKNOWN;
     }
+}
+
+uint16_t ModbusUtils::convert_to_ascci_format(uint8_t *MsgSourceAddr, uint8_t *MsgDestAddr, uint8_t MsgLength, uint8_t ui8WithCRCLRC){
+    uint16_t ui16ByteSize = 0;
+    uint8_t ui8LoopCounter=0;
+    uint8_t ui8Byte=0;
+    uint8_t ui8High=0;
+    uint8_t ui8Low=0;
+    uint8_t ui8LRC=0;
+    uint8_t ui8ConvertLength=0;
+
+    *MsgDestAddr++ = MODBUS_ASCII_START_BYTE;
+    ui16ByteSize++;
+
+    if(ui8WithCRCLRC == 1){
+        //calculate LRC before convertion
+        ui8LRC = Modbus_ASCII_LRC(MsgSourceAddr,MsgLength-2);
+        ui8ConvertLength = MsgLength-2;
+    }else{
+        //calculate LRC before convertion
+        ui8LRC = Modbus_ASCII_LRC(MsgSourceAddr,MsgLength);
+        ui8ConvertLength = MsgLength;
+    }
+    
+    Serial1.print("CRC new: ");
+    Serial1.println(ui8LRC);
+
+    for(ui8LoopCounter=0;ui8LoopCounter<ui8ConvertLength;ui8LoopCounter++){
+        ui8Byte = *MsgSourceAddr++;
+
+        ui8High = 0;
+        if((ui8Byte >> 4) > 9){
+            ui8High = 0x07;
+        }
+        ui8High = ui8High + (ui8Byte >> 4) + 0x30;
+        *MsgDestAddr++ = ui8High;
+        ui16ByteSize++;
+
+        ui8Low = 0;
+        if((ui8Byte & 0x0F) > 9){
+            ui8Low = 0x07;
+        }
+        ui8Low = ui8Low + (ui8Byte & 0x0F) + 0x30;
+        *MsgDestAddr++ = ui8Low;
+        ui16ByteSize++;
+    }
+
+    ui8Byte = ui8LRC;
+    ui8High = 0;
+    if((ui8Byte >> 4) > 9){
+        ui8High = 0x07;
+    }
+    ui8High = ui8High + (ui8Byte >> 4) + 0x30;
+    *MsgDestAddr++ = ui8High;
+    ui16ByteSize++;
+
+    ui8Low = 0;
+    if((ui8Byte & 0x0F) > 9){
+        ui8Low = 0x07;
+    }
+    ui8Low = ui8Low + (ui8Byte & 0x0F) + 0x30;
+    *MsgDestAddr++ = ui8Low;
+    ui16ByteSize++;
+
+    *MsgDestAddr++ = MODBUS_ASCII_CR_BYTE;
+    ui16ByteSize++;
+
+    *MsgDestAddr++ = MODBUS_ASCII_LF_BYTE;
+    ui16ByteSize++;
+
+    return ui16ByteSize;
 }
 
 // Preinstantiate Objects //////////////////////////////////////////////////////

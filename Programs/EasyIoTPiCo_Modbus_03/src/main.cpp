@@ -70,7 +70,9 @@ void setup(){
     ESPServer.on("/",ESPServer_HandleRoot);
     ESPServer.on("/modbusupdate",ESPServer_ModbusUpdate);
     ESPServer.onNotFound(ESPServer_HandleWebRequests);
-    ESPServer.begin();
+    ESPServer.begin();   
+
+    ESPServer_ModbusUpdate();
 }
 
 void loop(){
@@ -120,7 +122,8 @@ void ESPServer_ModbusUpdate(void){
     String sRxString;
     uint8_t ui8LoopCounter=0;
     uint8_t  ui8TxByteCount=0;
-    
+    uint8_t aui8Test[32];
+
 	ui8FunCode = ESPServer.arg("funcode").toInt();
     ui8NumberOfReg = ESPServer.arg("numbreg").toInt();
 
@@ -133,10 +136,10 @@ void ESPServer_ModbusUpdate(void){
         aui8ModbusTxBuf[5] = ui8NumberOfReg;
 
         ui8TxByteCount = 6;
-
-        ui8ExpectedBytes = ModUtils.Modbus_ExpectedBytes_RTU(aui8ModbusTxBuf);
-
-        ui8MobdusResponse = Modbus.Modbus_RunCommand(aui8ModbusTxBuf,ui8TxByteCount,ui8ExpectedBytes,&   RxByteCount,300,&ResponseTimeout);
+        
+        ui8TxByteCount = ModUtils.convert_to_ascci_format(aui8ModbusTxBuf,aui8Test,ui8TxByteCount,0);
+        Modbus_ExpectedBytes_ASCII();
+        Modbus.Modbus_RunCommand_ASCII(aui8Test,ui8TxByteCount,ui8ExpectedBytes,&RxByteCount,300,&ResponseTimeout);
 
     }else if(ui8FunCode == MODBUS_FUNC_WRITE_SINGLE_COIL){
         aui8ModbusTxBuf[0] = 0x01;  
@@ -170,7 +173,7 @@ void ESPServer_ModbusUpdate(void){
         ui8TxByteCount = 6;
 
         ui8ExpectedBytes = ModUtils.Modbus_ExpectedBytes_RTU(aui8ModbusTxBuf);
-        MUtils.Modbus_Convert_RTU_To_ASCII();
+        //MUtils.Modbus_Convert_RTU_To_ASCII();
         ui8MobdusResponse = Modbus.Modbus_RunCommand(aui8ModbusTxBuf,ui8TxByteCount,ui8ExpectedBytes,&   RxByteCount,300,&ResponseTimeout);
     }else if(ui8FunCode == MODBUS_FUNC_WRITE_MULTI_COIL){
         aui8ModbusTxBuf[0] = 0x01;  

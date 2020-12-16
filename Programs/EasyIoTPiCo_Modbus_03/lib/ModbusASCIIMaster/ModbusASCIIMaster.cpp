@@ -292,6 +292,7 @@ uint8_t ModbusASCIIMaster::Modbus_RunCommand(uint8_t aui8Buffer[],uint8_t ui8Byt
 
 uint8_t ModbusASCIIMaster::Modbus_RunCommand_ASCII(uint8_t aui8Buffer[],uint8_t ui8ByteToSent,uint8_t BytesExpected,uint8_t* RxByteCount, uint16_t TimeOutIntervalInMs, uint16_t *ResponseTimeout){
 	uint16_t msloopCount;
+    char cLRC;
     uint16_t ui16CRC;
     uint8_t ui8LoopCounter;
     uint8_t ui8Low;
@@ -299,14 +300,17 @@ uint8_t ModbusASCIIMaster::Modbus_RunCommand_ASCII(uint8_t aui8Buffer[],uint8_t 
 
 	memset(ModUtils.aui8ModbusRxBuffer, 0, MODBUS_RX_BUFFER_SIZE);
         
-	ui16CRC = ModUtils.Modbus_CalculateCRC16(aui8Buffer, ui8ByteToSent);
+	cLRC = ModUtils.Modbus_ASCII_LRC(aui8Buffer, ui8ByteToSent);
+    Serial1.print("LRC:");
+    Serial1.print(cLRC);
+    
 	aui8Buffer[ui8ByteToSent] = ui16CRC >> 8;
 	aui8Buffer[ui8ByteToSent+1] = ui16CRC;
 	
     //digitalWrite(MODBUS_ENABLE_PIN, HIGH);
     //digitalWrite(MODBUS_LED_PIN, HIGH);
     
-    Serial.print("Modbus Tx: ");
+    Serial1.print("Modbus Tx: ");
     for(ui8LoopCounter=0;ui8LoopCounter<(ui8ByteToSent+2);ui8LoopCounter++){
         Serial.write(aui8Buffer[ui8LoopCounter]);
         Serial1.print(aui8Buffer[ui8LoopCounter],HEX);

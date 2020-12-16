@@ -172,6 +172,8 @@ public:
     //uint8_t modbus_get_expected_bytes( uint8_t function_code, uint16_t register_count);
 
     uint8_t Modbus_Get_Error_Code(uint8_t ui8Byte);
+
+    uint16_t convert_to_ascci_format(uint8_t *MsgSourceAddr, uint8_t *MsgDestAddr, uint8_t MsgLength,uint8_t ui8WithCRCLRC);
 };
 
 #if !defined(NO_GLOBAL_INSTANCES) && !defined(NO_GLOBAL_TWOWIRE)

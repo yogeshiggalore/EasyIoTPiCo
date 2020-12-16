@@ -24,14 +24,14 @@
 #define HEARTBEAT_INTERVAL 300000 // 5 Minutes 
 
 /* API key of siniric account */
-#define APIKEY "6cbd92b8-caf8-45f7-b749-0297e971fc1e"
+#define APIKEY "6cbd92b8-caf8-45f7-b749-xxxxxxx"
 
 /* Wifi SSID and password */
 #define SSID     "IOTDev"
 #define PASSWORD "IOTDev1234"
 
 /* Device ID in sinric.com */
-#define DEVICEID "5cf259a7bfe01b2db3b7197f"
+#define DEVICEID "5cf259a7bfe01b2dxxxxx"
 
 #define DEVICE_PIN  2
 
